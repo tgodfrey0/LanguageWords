@@ -1,3 +1,5 @@
+import random
+
 def selectTargetLanguage():
     print("1)Russian\n2)English\n3)German")
     choice = input("Please select your target language: ")
@@ -12,4 +14,3 @@ def selectTargetLanguage():
         selectTargetLanguage()
 
 target_language = selectTargetLanguage()
-print(target_language)
