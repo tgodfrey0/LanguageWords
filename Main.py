@@ -51,3 +51,4 @@ display(getWords(target_language))
 while(input("Press any key for more words, type \"exit\" to quit\n").lower() != "exit"):
     display(getWords(target_language))
 # Include nunbers in adjectives
+print("Goodbye")
