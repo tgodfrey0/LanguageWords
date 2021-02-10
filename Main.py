@@ -23,7 +23,7 @@ def getWords(language):
     indirect_object = noun
     location = location
     """
-    files = [open(str("./LanguagePacks/nouns/" + language), "r"),
+    files = [open(str("./LanguagePacks/people/" + language), "r"),
     open(str("./LanguagePacks/adverbs/" + language), "r"),
     open(str("./LanguagePacks/verbs/" + language), "r"),
     open(str("./LanguagePacks/adjectives/" + language), "r"),
