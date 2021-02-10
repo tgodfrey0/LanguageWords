@@ -17,6 +17,7 @@ def getWords(language):
     """
     subject = noun
     adverb = adverb
+    verb = verb
     adjective = adjective
     direct_object = noun
     indirect_object = noun
@@ -24,6 +25,7 @@ def getWords(language):
     """
     files = [open(str("./LanguagePacks/nouns/" + language), "r"),
     open(str("./LanguagePacks/adverbs/" + language), "r"),
+    open(str("./LanguagePacks/verbs/" + language), "r"),
     open(str("./LanguagePacks/adjectives/" + language), "r"),
     open(str("./LanguagePacks/nouns/" + language), "r"),
     open(str("./LanguagePacks/nouns/" + language), "r"),
@@ -31,10 +33,21 @@ def getWords(language):
     words = []
     for i in range(7):
         lines = files[i].readlines()
-        words.append(lines[random.randInt(0, lines.len()-1)])
-    # subject, adverb, adjective, direct_object, indirect_object, location
+        words.append(lines[random.randint(0, len(lines)-1)].strip("\n"))
     return words
 
-words = getWords(selectTargetLanguage())
-print(words)
-# subject, adverb, verb, adjective, direct object, indirect object, location
+def display(words):
+    print("\nBelow are your randomly generated words:")
+    print("Subject: " + words[0])
+    print("Adverb: " + words[1])
+    print("Verb: " + words[2])
+    print("Adjective: " + words[3])
+    print("Direct Object: " + words[4])
+    print("Indirect Object: " + words[5])
+    print("Location: " + words[6])
+
+target_language = selectTargetLanguage()
+display(getWords(target_language))
+while(input("Press any key for more words, type \"exit\" to quit\n").lower() != "exit"):
+    display(getWords(target_language))
+# Include nunbers in adjectives
