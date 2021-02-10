@@ -28,22 +28,22 @@ def getWords(language):
     open(str("./LanguagePacks/verbs/" + language), "r"),
     open(str("./LanguagePacks/adjectives/" + language), "r"),
     open(str("./LanguagePacks/nouns/" + language), "r"),
-    open(str("./LanguagePacks/nouns/" + language), "r"),
+    open(str("./LanguagePacks/people/" + language), "r"),
     open(str("./LanguagePacks/locations/" + language), "r")]
     words = []
     for i in range(7):
         lines = files[i].readlines()
-        words.append(lines[random.randint(0, len(lines)-1)].strip("\n"))
+        words.append(lines[random.randint(0, len(lines)-1)].strip("\n").capitalize())
     return words
 
 def display(words):
     print("\nBelow are your randomly generated words:")
-    print("Subject: " + words[0])
+    print("Person (Pronoun): " + words[0])
     print("Adverb: " + words[1])
     print("Verb: " + words[2])
     print("Adjective: " + words[3])
-    print("Direct Object: " + words[4])
-    print("Indirect Object: " + words[5])
+    print("Direct Object (Noun): " + words[4])
+    print("Indirect Object (Pronoun): " + words[5])
     print("Location: " + words[6])
 
 target_language = selectTargetLanguage()
